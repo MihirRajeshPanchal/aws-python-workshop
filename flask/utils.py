@@ -5,6 +5,7 @@ from rich.console import Console
 import os
 import boto3
 import botocore
+from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 from werkzeug.utils import secure_filename
 import mimetypes
 import io

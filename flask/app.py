@@ -3,8 +3,8 @@ from functions import *
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/s3upload', methods=['POST'])
-def s3upload():
+@app.route('/s3_upload', methods=['POST'])
+def s3_upload():
     if 'files' not in request.files:
         return jsonify({'error': 'No files part'}), 400
     
@@ -37,8 +37,8 @@ def s3upload():
     
     return jsonify({'file_urls': uploaded_files_urls}), 200
 
-@app.route('/s3delete', methods=['DELETE'])
-def s3delete():
+@app.route('/s3_delete', methods=['DELETE'])
+def s3_delete():
     if 'username' not in request.form or 'filename' not in request.form:
         return jsonify({'error': 'Username and filename required'}), 400
 
@@ -52,8 +52,8 @@ def s3delete():
     
     return jsonify({'message': 'File deleted successfully'}), 200
 
-@app.route('/s3list', methods=['POST'])
-def s3list():
+@app.route('/s3_list', methods=['POST'])
+def s3_list():
     if 'username' not in request.form:
         return jsonify({'error': 'Username required'}), 400
 
@@ -71,8 +71,8 @@ def s3list():
 
     return jsonify({'file_names': file_names}), 200
 
-@app.route('/s3download', methods=['POST'])
-def s3download():
+@app.route('/s3_download', methods=['POST'])
+def s3_download():
     if 'username' not in request.form or 'filename' not in request.form:
         return jsonify({'error': 'Username and filename required'}), 400
 
@@ -85,6 +85,54 @@ def s3download():
         file_stream = io.BytesIO(s3_object['Body'].read())
         file_stream.seek(0)
         return send_file(file_stream, download_name=filename, as_attachment=True)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/sns_subscribe', methods=['POST'])
+def sns_subscribe():
+    email = request.form['email']
+
+    if not email:
+        return jsonify({'error': 'Email is required'}), 400
+
+    try:
+        response = sns.subscribe(
+            TopicArn=SNS_TOPIC_ARN,
+            Protocol='email',
+            Endpoint=email
+        )
+        return jsonify({'message': 'Subscription successful', 'SubscriptionArn': response['SubscriptionArn']}), 200
+    except NoCredentialsError:
+        return jsonify({'error': 'AWS credentials not found'}), 500
+    except PartialCredentialsError:
+        return jsonify({'error': 'Incomplete AWS credentials'}), 500
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/sns_publish', methods=['POST'])
+def sns_publish():
+    try:
+        email_title = request.form.get('email_title')
+        email_content = request.form.get('email_content')
+
+        if not email_title or not email_content:
+            return jsonify({'error': 'Title and content are required.'}), 400
+
+        response = sns.publish(
+            TopicArn=SNS_TOPIC_ARN,
+            Message=email_content,
+            Subject=email_title
+        )
+
+        return jsonify({
+            'message': 'Email published successfully',
+            'response': response
+        })
+
+    except NoCredentialsError:
+        return jsonify({'error': 'AWS credentials not found.'}), 500
+    except PartialCredentialsError:
+        return jsonify({'error': 'Incomplete AWS credentials.'}), 500
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
