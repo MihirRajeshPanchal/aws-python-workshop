@@ -1,3 +1,4 @@
 flask/.env
 flask/venv
 *.pyc
+frontend/.env
