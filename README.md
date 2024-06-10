@@ -7,4 +7,13 @@
   > [@mihirrajeshpanchal](https://github.com/MihirRajeshPanchal/)
   
   > [@vedbulsara04](https://github.com/vedbulsara04)
-  
+
+<br>
+
+## What is Boto3 ? 
+
+Boto3 is the ` official SDK for Python from AWS ` that lets you ` control your AWS cloud infrastructure ` from your Python programs. 
+<br> 
+- It provides an easy way to use various AWS services, like storage, virtual servers, and databases.
+
+- With Boto3, you can write Python code to automate tasks, manage resources, and build applications on AWS.
