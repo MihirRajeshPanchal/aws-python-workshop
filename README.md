@@ -12,7 +12,7 @@
 
 ## What is Boto3 ? 
 
-Boto3 is the ` official SDK for Python from AWS ` that lets you ` control your AWS cloud infrastructure ` from your Python programs. 
+Boto3 is the ` official SDK for Python from AWS ` that lets you ` control your AWS cloud infrastructure `
 
 <img align="right" width=200px height=200px alt="Boto3_Logo" src="https://python.gotrained.com/wp-content/uploads/2019/02/boto3.png">
 
@@ -26,5 +26,11 @@ Boto3 is the ` official SDK for Python from AWS ` that lets you ` control your A
   
 - Manage your compute resources using EC2, Lambda, etc.
 
+<br>
 
+## Deployed use-case:
+
+- Visit the link below for an example of ` using Boto3 with AWS S3 & AWS SNS `
+
+>  [Boto3-AWS-deployment](https://aws-python-workshop.vercel.app/) 
 
