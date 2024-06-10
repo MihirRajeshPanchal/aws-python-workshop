@@ -14,6 +14,11 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex items-center justify-center flex-grow">
+          <a href="/">
+            <div className="mx-4 text-lg text-black text-center">
+              Homepage
+            </div>
+          </a>
           <a href="/drive">
             <div className="mx-4 text-lg text-black text-center">
               S3 as a Drive

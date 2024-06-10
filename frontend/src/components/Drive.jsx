@@ -135,8 +135,8 @@ const Drive = () => {
   };
 
   return (
-    <div className="p-4">
-      <div className="flex mb-4">
+    <div className="p-4 px-16">
+      <div className="flex mb-4 pt-6 pb-8">
         <input
           type="text"
           value={username}
@@ -160,7 +160,7 @@ const Drive = () => {
       ) : (
         <ul>
           {files && files.map(file => (
-            <li key={file} className="flex items-center justify-between mb-2 p-2 border rounded">
+            <li key={file} className="flex items-center justify-between mb-2 p-2 border rounded px-4 pt-4 pb-4">
               <span>{file}</span>
               <div>
                 <button
