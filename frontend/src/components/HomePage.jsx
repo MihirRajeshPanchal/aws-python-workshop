@@ -35,7 +35,7 @@ const HomePage = () => {
                 GitHub
               </button>
             </a>
-            <a href="https://www.canva.com/design/DAGHrIrtLQs/iJTDUe83mudcY4o4gj_OZg/edit?utm_content=DAGHrIrtLQs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+            <a href="https://bit.ly/boto3-ppt" target="_blank">
               <button className="bg-gradient-to-r from-green-400 to-blue-500 hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-600 text-white font-bold py-2 px-6 rounded-full shadow-lg">
                 Presentation Link
               </button>
