@@ -9,6 +9,7 @@ const Navbar = () => {
           <a
             href="https://www.linkedin.com/in/mihirpanchal54/"
             className="mx-2"
+            target="_blank"
           >
             <FaLinkedin size={30} className="text-black" />
           </a>
@@ -26,12 +27,12 @@ const Navbar = () => {
           </a>
           <a href="/email">
             <div className="mx-4 text-lg text-black text-center">
-              SNS as a Email Sender
+              SNS as an Email Sender
             </div>
           </a>
         </div>
         <div className="flex items-center justify-end">
-          <a href="https://github.com/MihirRajeshPanchal/Mediapipe-Workshop" className="mx-2">
+          <a href="https://github.com/MihirRajeshPanchal/aws-python-workshop" className="mx-2" target="_blank">
             <FaGithub size={30} className="text-black" />
           </a>
         </div>
