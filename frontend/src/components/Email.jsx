@@ -49,7 +49,7 @@ const Email = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="border p-2 flex-grow rounded-l"
-            placeholder="Enter your email"
+            placeholder="Enter your email [! Service Closure !]"
           />
           <button
             onClick={handleSubscribe}
@@ -81,7 +81,7 @@ const Email = () => {
             value={emailTitle}
             onChange={(e) => setEmailTitle(e.target.value)}
             className="border p-2 w-full rounded"
-            placeholder="Enter email title"
+            placeholder="Enter email title [! Service Closure !]"
           />
         </div>
         <div className="mb-4">
@@ -93,7 +93,7 @@ const Email = () => {
             value={emailContent}
             onChange={(e) => setEmailContent(e.target.value)}
             className="border p-2 w-full rounded h-32"
-            placeholder="Enter email content"
+            placeholder="Enter email content [! Service Closure !]"
           />
         </div>
         {publishMessage && <p className="mt-4 text-green-500">{publishMessage}</p>}
