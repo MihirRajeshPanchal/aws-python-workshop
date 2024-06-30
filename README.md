@@ -1,4 +1,9 @@
 # Leveraging Boto3: Pythonic access to S3 and SNS on AWS
+
+<p align="center">
+  <img src="https://github.com/MihirRajeshPanchal/aws-python-workshop/assets/78205431/bea28aab-b3f8-4a92-8908-e8879c61b5bd" alt="MumPy Event">
+</p>
+
 <img align="right" width=200px height=200px alt="MumPy_Logo" src="https://pbs.twimg.com/media/GESdvumaEAAA2vf.jpg">
 
 ### A session on Boto3 at the MumPy event
